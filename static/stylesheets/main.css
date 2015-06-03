@@ -1,0 +1,33 @@
+#content {
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
+    top: 30%;
+    position: relative;
+}
+
+#content h1, #content p {
+    text-align: center;
+}
+
+#social-icons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#social-icons img {
+    margin-left: 3pt;
+    margin-right: 3pt;
+    vertical-align: middle
+}
+
+#navbar {
+    list-style-type: none;
+    padding: 3pt;
+}
+
+#navbar li {
+    display: inline;
+    margin-left: 5pt;
+    margin-right: 5pt;
+}

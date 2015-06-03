@@ -1,0 +1,36 @@
+<html>
+
+<head>
+    <title>Ingvaras Merkys @ ingvaras.com</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+    <script src="/scripts/angular.audio.js"></script>
+    <script src="/scripts/apis.js"></script>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/marx.min.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/apis.css">
+</head>
+
+<body ng-app="apiApp">
+    <ul id="navbar">
+        <li><a href="/">Home</a></li>
+        <li><a href="/apis">APIs</a></li>
+    </ul>   
+    <div id="apis" ng-controller="apiCtrl">
+        <h1>APIs</h1>
+        <p>A couple APIs I host here.</p>
+        <h2>Artwork</h2>
+        <p>Fetches album artwork from last.fm (highest quality available)<br>Usage:</p>
+        <ul>
+            <li><a href="http://www.ingvaras.com/artwork/Blur/The+Magic+Whip">ingvaras.com/artwork/Blur/The+Magic+Whip</a> returns HTML</li>
+            <li><a href="http://www.ingvaras.com/artwork/Blur/The+Magic+Whip/raw">ingvaras.com/artwork/Blur/The+Magic+Whip/raw</a> returns PNG/JPEG</li>
+        </ul>
+        <h2>Text to speech</h2>
+        <p>(Ab)uses Google Translate. Can be used <input type="text" ng-model="text"><button ng-click="say()">Say it!</button></p>
+
+        <ul>
+            <li><a href="http://www.ingvaras.com/tts/fr/Elon+Musk+est+génial">ingvaras.com/tts/fr/Elon+Musk+est+génial</a> returns MP3 audio</li>
+        </ul>
+        </div>
+</body>
+
+</html>

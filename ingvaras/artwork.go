@@ -40,7 +40,7 @@ func artworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params
 	client := urlfetch.Client(context)
 	artist := strings.Replace(ps.ByName("artist"), "+", " ", -1)
 	album := strings.Replace(ps.ByName("album"), "+", " ", -1)
-	redir := ps.ByName("redir") == "redir"
+	redir := ps.ByName("raw") == "raw"
 	link := makeUrl(artist, album)
 	resp, err := client.Get(link)
 	if err != nil {
@@ -63,8 +63,8 @@ func artworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params
         <title>%s - %s (size: %s)</title>
     </head>
     <body>
-        <img src="%s" height="100%">
+        <a href="%s"><img src="%s" height="100%"></a>
     </body>
     </html>`
-	fmt.Fprintf(w, template, albumJson.Album.Artist, albumJson.Album.Name, bigImage.Size, bigImage.Url)
+	fmt.Fprintf(w, template, albumJson.Album.Artist, albumJson.Album.Name, bigImage.Size, bigImage.Url, bigImage.Url)
 }
