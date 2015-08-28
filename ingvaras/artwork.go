@@ -54,7 +54,13 @@ func artworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params
 	}
 	var albumJson AlbumJson
 	err = json.Unmarshal(body, &albumJson)
-	bigImage := albumJson.Album.ImageList[len(albumJson.Album.ImageList)-1]
+	bigImage := Image{}
+	for _, element := range albumJson.Album.ImageList {
+		if element.Size == "mega" {
+			bigImage = element
+		}
+	}
+
 	if redir {
 		http.Redirect(w, r, bigImage.Url, 301)
 	}
@@ -62,8 +68,8 @@ func artworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params
     <head>
         <title>%s - %s (size: %s)</title>
     </head>
-    <body>
-        <a href="%s"><img src="%s" height="100%"></a>
+    <body style="margin: 0; height: 100%%">
+		<a href="%s"><img src="%s" style="max-height: 100%%; width: auto"/></a>
     </body>
     </html>`
 	fmt.Fprintf(w, template, albumJson.Album.Artist, albumJson.Album.Name, bigImage.Size, bigImage.Url, bigImage.Url)
