@@ -18,9 +18,13 @@ handlers:
   static_files: static/CV.pdf
   upload: static/CV.pdf
 
-- url: /y\.gif
+- url: /y(\.gif)?
   static_files: static/y.gif
   upload: static/y.gif
+
+- url: /coding(\.gif)?
+  static_files: static/images/coding.gif
+  upload: static/coding.gif
 
 - url: /static/(.*\.(gif|png|jpg|otf|pdf|html))$
   static_files: static/\1
