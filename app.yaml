@@ -26,9 +26,13 @@ handlers:
   static_files: static/images/coding.gif
   upload: static/coding.gif
 
-- url: /static/(.*\.(gif|png|jpg|otf|pdf|html))$
+- url: /unacceptable$
+  static_files: static/unacceptable.html
+  upload: statics/unacceptable.html
+
+- url: /static/(.*\.(gif|png|jpg|otf|pdf|html|mp4))$
   static_files: static/\1
-  upload: static/.*\.(gif|png|jpg|otf|pdf|html)$
+  upload: static/.*\.(gif|png|jpg|otf|pdf|html|mp4)$
 
 - url: /.*
   script: _go_app
