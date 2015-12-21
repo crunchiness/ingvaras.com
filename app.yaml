@@ -30,9 +30,9 @@ handlers:
   static_files: static/unacceptable.html
   upload: statics/unacceptable.html
 
-- url: /static/(.*\.(gif|png|jpg|otf|pdf|html|mp4))$
+- url: /static/(.*\.(gif|png|jpg|otf|pdf|html|mp4|webm))$
   static_files: static/\1
-  upload: static/.*\.(gif|png|jpg|otf|pdf|html|mp4)$
+  upload: static/.*\.(gif|png|jpg|otf|pdf|html|mp4|webm)$
 
 - url: /.*
   script: _go_app
