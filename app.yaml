@@ -6,33 +6,47 @@ api_version: go1
 handlers:
 - url: /stylesheets
   static_dir: static/stylesheets
+  secure: always
 
 - url: /scripts
   static_dir: static/scripts
+  secure: always
 
 - url: /favicon\.ico
   static_files: static/favicon.ico
-  upload: static/favicon.ico    
+  upload: static/favicon.ico
+  secure: always
 
 - url: /CV(\.pdf)?
   static_files: static/CV.pdf
   upload: static/CV.pdf
+  secure: always
 
 - url: /y(\.gif)?
   static_files: static/y.gif
   upload: static/y.gif
+  secure: always
+
+- url: /klk$
+  static_files: static/klk_laptop.jpg
+  upload: static/klk_laptop.jpg
+  secure: always
 
 - url: /coding(\.gif)?
   static_files: static/images/coding.gif
   upload: static/coding.gif
+  secure: always
 
 - url: /unacceptable$
   static_files: static/unacceptable.html
-  upload: statics/unacceptable.html
+  upload: static/unacceptable.html
+  secure: always
 
 - url: /static/(.*\.(gif|png|jpg|otf|pdf|html|mp4|webm))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg|otf|pdf|html|mp4|webm)$
+  secure: always
 
 - url: /.*
   script: _go_app
+  secure: always
