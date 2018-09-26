@@ -5,4 +5,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${DIR}"
 
 # Deploy to GAE
-gcloud app deploy --project original-storm-93323 app.yaml
+gcloud app deploy --project ingvaras app.yaml
