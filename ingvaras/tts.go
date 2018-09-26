@@ -15,7 +15,7 @@ func makeUrl2(lang, query string) string {
 	return link
 }
 
-func ttsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func TtsHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	lang := ps.ByName("lang")
 	query := strings.Replace(ps.ByName("query")[1:], "+", " ", -1)
 	link := makeUrl2(lang, query)

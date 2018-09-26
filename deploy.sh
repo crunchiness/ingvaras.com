@@ -5,4 +5,4 @@ DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "${DIR}"
 
 # Deploy to GAE
-/opt/sdk/google-appengine-go/appcfg.py -A original-storm-93323 update ./
+gcloud app deploy --project original-storm-93323 app.yaml

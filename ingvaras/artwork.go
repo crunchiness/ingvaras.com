@@ -35,7 +35,7 @@ type Image struct {
 	Size string `json:"size"`
 }
 
-func artworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
+func ArtworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	context := appengine.NewContext(r)
 	client := urlfetch.Client(context)
 	artist := strings.Replace(ps.ByName("artist"), "+", " ", -1)

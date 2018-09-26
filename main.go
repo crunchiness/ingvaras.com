@@ -1,6 +1,7 @@
-package ingvaras
+package main
 
 import (
+	"github.com/crunchiness/ingvaras.com/ingvaras"
 	"github.com/julienschmidt/httprouter"
 	"net/http"
 )
@@ -9,9 +10,9 @@ func init() {
 	router := httprouter.New()
 	router.GET("/", handler)
 	router.GET("/apis", apisHandler)
-	router.GET("/artwork/:artist/:album", artworkHandler)
-	router.GET("/artwork/:artist/:album/:raw", artworkHandler)
-	router.GET("/tts/:lang/*query", ttsHandler)
+	router.GET("/artwork/:artist/:album", ingvaras.ArtworkHandler)
+	router.GET("/artwork/:artist/:album/:raw", ingvaras.ArtworkHandler)
+	router.GET("/tts/:lang/*query", ingvaras.TtsHandler)
 	router.NotFound = http.HandlerFunc(notFoundHandler)
 	http.Handle("/", router)
 }
