@@ -67,6 +67,15 @@ func ArtworkHandler(w http.ResponseWriter, r *http.Request, ps httprouter.Params
 	}
 	template := `<html>
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-44150242-3"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-44150242-3');
+        </script>
         <title>%s - %s (size: %s)</title>
     </head>
     <body style="margin: 0; height: 100%%">
