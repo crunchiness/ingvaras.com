@@ -10,6 +10,11 @@
     text-align: center;
 }
 
+#content h1 .u-url {
+    color: #444;
+    cursor: default;
+}
+
 #social-icons {
     display: flex;
     justify-content: space-around;
