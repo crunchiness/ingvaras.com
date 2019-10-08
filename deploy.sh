@@ -2,7 +2,7 @@
 
 # Allows to run script from anywhere
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-cd "${DIR}"
+cd "${DIR}" || exit
 
 # Deploy to GAE
 gcloud app deploy --project ingvaras app.yaml

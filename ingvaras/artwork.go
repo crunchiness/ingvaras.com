@@ -1,11 +1,11 @@
 package ingvaras
 
 import (
-	"appengine"
-	"appengine/urlfetch"
 	"encoding/json"
 	"fmt"
 	"github.com/julienschmidt/httprouter"
+	"google.golang.org/appengine"
+	"google.golang.org/appengine/urlfetch"
 	"io/ioutil"
 	"net/http"
 	"net/url"
