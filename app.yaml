@@ -9,14 +9,23 @@ handlers:
   static_dir: static/scripts
   secure: always
 
+- url: /images
+  static_dir: static/images
+  secure: always
+
 - url: /favicon\.ico
   static_files: static/favicon.ico
   upload: static/favicon.ico
   secure: always
 
-- url: /CV(\.pdf)?
+- url: /CV(\.pdf)?$
   static_files: static/CV.pdf
   upload: static/CV.pdf
+  secure: always
+
+- url: /CV\.txt$
+  static_files: static/CV.txt
+  upload: static/CV.txt
   secure: always
 
 - url: /y(\.gif)?
