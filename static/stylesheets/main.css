@@ -39,9 +39,10 @@ body {
 }
 
 #social-icons img {
-    margin-left: 3pt;
-    margin-right: 3pt;
-    vertical-align: middle
+    margin-left: 0;
+    margin-right: 0;
+    vertical-align: middle;
+    height: 32px
 }
 
 #navbar {
